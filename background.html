@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Background Animation</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .background {
+            position: fixed; /* Changed to fixed */
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            width: 100%; /* Changed from 105vw */
+            height: 100%;
+            background: #0C1015;
+            overflow: hidden; /* Added to contain blobs */
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 40% 60% 70% 50%;
+            filter: blur(50px);
+            mix-blend-mode: difference;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .noise {
+            position: fixed;
+            background: url('../assets/noise.svg') repeat;
+            z-index: 4;
+            width: 100%;
+            height: 100%;
+            filter: contrast(50%) brightness(200%);
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+
+        .blob:nth-child(1) {
+            background-color: #0C8CE9;
+            width: 850px;
+            height: 550px;
+            bottom: 50%;
+            left: -5%;
+            animation: fadeIn 0.5s ease-out forwards, blob1 15s infinite ease-in-out alternate;
+        }
+
+        @keyframes blob1 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(140px, 50px) scale(0.9);
+                width: 70%;
+                height: 90%;
+            }
+            100% {
+                transform: translate(100px, 0px) scale(1);
+                width: 40%;
+                height: 80%;
+            }
+        }
+
+        .blob:nth-child(2) {
+            background-color: #0A3EBC;
+            width: 300px;
+            height: 400px;
+            top: 40%;
+            left: 50%;
+            animation: fadeIn 0.5s ease-out forwards, blob2 15s infinite ease-in-out alternate;
+        }
+
+        @keyframes blob2 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(-100px, 150px) scale(1.2);
+                width: 50%;
+                height: 100%;
+            }
+            100% {
+                transform: translate(-1000px, 250px) scale(1);
+                width: 90%;
+                height: 100%;
+            }
+        }
+
+        .blob:nth-child(3) {
+            background-color: #78D6D5;
+            width: 450px;
+            height: 300px;
+            top: 50%;
+            right: 70%;
+            animation: fadeIn 0.5s ease-out forwards, blob3 20s infinite ease-in-out alternate;
+        }
+
+        @keyframes blob3 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(20px, -150px) scale(0.9);
+                width: 90%;
+                height: 60%;
+                background-color: #10378D;
+            }
+            100% {
+                transform: translate(100px, 50px) scale(1);
+                width: 80%;
+                height: 100%;
+                background-color: #0C8CE9;
+            }
+        }
+
+        .blob:nth-child(4) {
+            background-color: #1871A2;
+            width: 500px;
+            height: 650px;
+            bottom: 30%;
+            right: -10%;
+            animation: fadeIn 0.5s ease-out forwards, blob4 25s infinite ease-in-out alternate;
+        }
+
+        @keyframes blob4 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(-100px, 0px) scale(0.9);
+                width: 100%;
+                height: 60%;
+            }
+            100% {
+                background-color: #10378D;
+                transform: translate(100px, 50px) scale(1);
+                width: 80%;
+                height: 100%;
+            }
+        }
+
+        .blob:nth-child(5) {
+            background-color: #10378D;
+            width: 900px;
+            height: 450px;
+            bottom: 10%;
+            right: -10%;
+            animation: fadeIn 0.5s ease-out forwards, blob5 25s infinite ease-in-out alternate;
+        }
+
+        @keyframes blob5 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -50px) scale(1.1);
+                width: 90%;
+            }
+            50% {
+                transform: translate(-100px, 100px) scale(0.9);
+                width: 50%;
+            }
+            75% {
+                transform: translate(100px, -150px) scale(1.2);
+                width: 75%;
+            }
+            100% {
+                transform: translate(-50px, 150px) scale(1);
+                width: 100%;
+                height: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="noise"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+</body>
+</html>

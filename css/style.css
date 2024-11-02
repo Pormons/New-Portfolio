@@ -1,0 +1,681 @@
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+button {
+    border-style: none;
+}
+
+body,
+html {
+    background: transparent;
+    height: auto;
+    min-height: 100vh;
+    margin: 0px;
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.background-frame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+    /* This allows clicking through the iframe */
+    z-index: -1;
+    /* This puts it behind your content */
+}
+
+.main-container {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    z-index: 10;
+    margin-top: 12rem;
+}
+
+.moto {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.moto span {
+    font-size: 60px;
+}
+
+
+.landing-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffff;
+    margin-bottom: 13rem;
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-items: center;
+}
+
+.greeting-container {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background: #0000006e;
+    padding: 10px 40px;
+    gap: 10px;
+}
+
+.interactive-text {
+    font-size: 2rem;
+    background-image: linear-gradient(45deg, #adb4ff, #001aff);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    background-clip: text;
+    -moz-text-fill-color: transparent;
+    position: relative;
+}
+
+.interactive-text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #00f7ff, #5900ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    background-clip: text;
+    -moz-text-fill-color: transparent;
+    clip-path: circle(0px at var(--x, 50%) var(--y, 50%));
+    transition: clip-path 0.2s ease;
+}
+
+.interactive-text:hover::before {
+    clip-path: circle(150px at var(--x, 50%) var(--y, 50%));
+}
+
+.banner-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 20%;
+    transform: rotate(-3deg);
+    width: 105%;
+    white-space: nowrap;
+    font-size: 0;
+    left: -25px;
+}
+
+.banner-slide {
+    gap: 50px;
+    color: transparent;
+    display: inline-flex;
+    padding: 10px;
+    font-size: 0.6rem;
+    align-items: center;
+    backdrop-filter: blur(50px);
+    background-color: rgba(99, 75, 75, 0.2);
+    -webkit-text-stroke: 0.4px rgb(255, 255, 255);
+    -webkit-backdrop-filter: blur(10px);
+    animation: 20s slide infinite linear;
+}
+
+.circle {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 100%;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+.stacks-container {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 100px;
+    margin-inline: 5%;
+    padding: 5px;
+    margin-bottom: 5%;
+}
+
+
+.nav-bar { /* If using class, or #nav-bar if using ID */
+    display: flex;
+    height: 15%;
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0;
+    left: 0; /* Add this */
+    right: 0; /* Add this */
+    align-items: center;
+    justify-content: space-between;
+    z-index: 30;
+    padding-inline: 15px;
+    transition: top 0.2s ease-in-out;
+}
+
+.hidden {
+    top: -60px; /* Adjust based on your header height */
+}
+
+
+.top-menu {
+    height: 50px;
+    display: flex;
+    background-color: #81818121;
+    padding: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 50px;
+    backdrop-filter: blur(50px);
+    align-items: center;
+    justify-items: center;
+    gap: 6px;
+    box-shadow: 0 0px 0px 0.5px rgba(255, 255, 255, 0.568);
+}
+
+.nav-button {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    padding: 0;
+    background: #35353521;
+    backdrop-filter: blur(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Only transition properties that work */
+}
+
+.nav-button span {
+    color: white;
+}
+
+.nav-radial {
+    position: absolute;
+    inset: 0;
+    filter: blur(2px);
+    /* Single blur property */
+    background: radial-gradient(circle 35px at center 0px, rgba(255, 255, 255, 0.205) 0%, rgba(122, 122, 122, 0) 100%);
+    background-clip: padding-box;
+    /* Ensures the radial gradient is clipped inside the button's border */
+    z-index: -1;
+    /* Behind the content */
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Only transition properties that work */
+}
+
+.nav-selected {
+    padding: 0;
+    padding-inline: 20px;
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.5);
+}
+
+.nav-selected .nav-radial,
+.nav-button:hover .nav-radial {
+    opacity: 1;
+}
+
+.selection-indicator {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: #a9b6c721;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.social-container {
+    display: flex;
+    position: fixed;
+    background: #adadad49;
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    padding: 10px;
+    right: 25px;
+    top: 80px;
+    border-radius: 20px;
+    box-shadow: 0 0px 0px 0.5px rgba(255, 255, 255, 0.568);
+    transform: scale(0); /* Initially hidden */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for both scale and opacity */
+    transform-origin: top right; /* Scale from top-right corner */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.social-container.show {
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interaction */
+}
+
+
+.social-button {
+    width: 50px;
+    height: 50px; 
+    background: #8b8b8b60;
+    backdrop-filter: blur(15px);
+    display: flex;
+    position: relative; /* Ensure the button is positioned correctly */
+    overflow: hidden; /* Hide overflow in case of rotation */
+    border-radius: 50%; /* Changed to 50% for a perfect circle */
+    justify-content: center; /* Centering items inside the button */
+    align-items: center; /* Centering items inside the button */
+    color: white;
+    box-shadow: 0 0px 0px 0.5px rgba(255, 255, 255, 0.568);
+    transition: all 0.5s ease-in; /* Smooth transition for all properties */
+}
+
+.social-button span {
+    display: flex; /* Use flex to ensure center alignment of icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 3px; /* Adjust margin if necessary */
+}
+
+.social-button span i {
+    transition: transform 0.3s ease; /* Smooth transition for icon scaling */
+}
+
+.social-button span i.scale {
+    transform: scale(0.5) rotate(180deg) translateY(6px); /* Scale down and rotate */
+}
+
+.social-button:active {
+    background:#b8b8b860;
+    box-shadow: 0 0px 5px 1px rgba(255, 255, 255, 0.568);
+}
+
+.logo-container {
+    width: 50px;
+    height: 50px; 
+}
+
+.social-container a {
+    font-size: 15px;
+    padding: 10px;
+    gap: 8px;
+    padding-inline: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    transition: all 0.3s ease-in;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.text-white {
+    color: white;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-tech {
+    margin-top: 10px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.project-content {
+    overflow: hidden;
+}
+
+.demo-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    gap: 10px;
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
+    scroll-behavior: smooth;  /* Smooth scrolling if needed */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.border-rounded {
+    border-radius: 8px;
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.app {
+    font-size: 20px;
+}
+
+.app-kind {
+    font-size: 12px;
+}
+
+.app-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+.demo-button {
+    position: relative;
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 50px;
+    position: relative;
+    outline: none;
+    border-style: none;
+    backdrop-filter: blur(50px);
+    background: rgba(75, 75, 75, 0.227);
+    overflow: hidden; /* Ensures content is clipped to the border-radius */
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.568);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.demo-button:hover {
+    background: rgba(255, 255, 255, 0.068);
+    box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.329);
+}
+
+.demo-button:hover .stack-radial {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.493) 0%, rgba(122, 122, 122, 0) 100%);
+}
+
+.demo-modal {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    background: #000000a1;
+}
+
+
+.project-container {
+    border-style: none;
+    height: 120%;
+    margin-inline: 1%;
+    padding: 10px;
+    border-radius: 20px;
+    background: linear-gradient(0deg, rgba(201, 201, 201, 0.274) 2%, rgba(22, 22, 22, 0.267) 100%);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 -0.1px 0px 0.5px rgba(255, 255, 255, 0.568);
+    /* -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%); */
+    transition: all 0.3s ease;
+}
+
+.project-box {
+    position: relative;
+    overflow: hidden;
+    /* Ensures content is clipped to the border-radius */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.568);
+    transition: all 0.5s ease;
+    /* Shorter transition time for smoothness */
+}
+
+.project-radial {
+    position: absolute;
+    inset: 0;
+    filter: blur(2px);
+    /* Single blur property */
+    background: radial-gradient(circle at 50% -10%, rgba(0, 68, 255, 0.336) 0%, rgba(122, 122, 122, 0) 100%);
+    background-clip: padding-box;
+    /* Ensures the radial gradient is clipped inside the button's border */
+    z-index: -1;
+    /* Behind the content */
+    opacity: 0.5;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Only transition properties that work */
+}
+
+.project-box:hover .project-radial {
+    opacity: 1;
+    /* Change opacity for a fading effect */
+}
+
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    body {
+        font-size: 17px;
+    }
+
+    .stacks-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Other styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    /* Other styles for medium devices */
+    .stacks-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    .main-container {
+        margin-top: 13rem;
+    }
+
+    .interactive-text {
+        font-size: 4rem;
+    }
+
+    .nav-bar {
+        display: flex;
+        padding: 20px;
+        justify-content: space-evenly;
+    }
+
+
+    .social-container {
+        display: flex;
+        position: static;
+        background: transparent;
+        backdrop-filter: blur(0px);
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+        gap: 5px;
+        width: 10%;
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .logo-container {
+        width: 10%;
+    
+    }
+
+    .social-button {
+        display: none;
+    }
+
+    .landing-text {
+        height: 90%;
+        margin-top: 7%;
+        justify-content: start;
+    }
+
+    .greeting {
+        display: flex;
+    }
+
+    .greeting-container {
+
+        /* Change to inline-flex */
+    }
+
+    .greeting img {
+        height: 6rem;
+        /* Ensure the image has a consistent height */
+    }
+
+    .banner-slide {
+        font-size: 2rem;
+    }
+
+    .circle {
+        scale: 1.2;
+    }
+
+    .stacks-container {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .social-container a:hover {
+        background: #31313173;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0px 0px 0.8px rgba(255, 255, 255, 0.568);
+    }
+
+    .project-container {
+        border-style: none;
+        height: 37rem;
+        margin-inline: 15%;
+        padding: 10px;
+        border-radius: 20px;
+        background: linear-gradient(0deg, rgba(201, 201, 201, 0.274) 2%, rgba(22, 22, 22, 0.267) 100%);
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+    }
+
+    .project-box {
+        position: relative;
+        overflow: hidden;
+        /* Ensures content is clipped to the border-radius */
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.568);
+        transition: all 0.5s ease;
+        /* Shorter transition time for smoothness */
+    }
+
+    .project-radial {
+        position: absolute;
+        inset: 0;
+        filter: blur(2px);
+        /* Single blur property */
+        background: radial-gradient(circle at 50% -10%, rgba(0, 68, 255, 0.336) 0%, rgba(122, 122, 122, 0) 100%);
+        background-clip: padding-box;
+        /* Ensures the radial gradient is clipped inside the button's border */
+        z-index: -1;
+        /* Behind the content */
+        opacity: 0.5;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        /* Only transition properties that work */
+    }
+
+    .project-box:hover .project-radial {
+        opacity: 1;
+        /* Change opacity for a fading effect */
+    }
+
+    .project-header {
+        gap: 10px;
+    }
+
+    .project-logo {
+        height: 5%;
+    }
+    
+    .project-tech {
+        grid-template-columns: repeat(5, 1fr);
+    };
+
+
+}
+
+
+/* XXL devices (larger desktops, 1400px and up) */
+@media (min-width: 2000px) {
+
+    .stacks-container {
+        margin-inline: 25%;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+
+    /* Other styles for XXL devices */
+}
