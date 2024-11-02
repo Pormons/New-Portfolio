@@ -28,6 +28,16 @@ html {
     scroll-behavior: smooth;
 }
 
+.footer {
+    display: flex;
+    height: 13rem;
+    margin-top: 40px;
+    backdrop-filter: blur(20px);
+    background: #0506145b;
+    justify-content: center;
+    align-items: center;
+}
+
 .background-frame {
     position: fixed;
     top: 0;
@@ -369,11 +379,16 @@ html {
     justify-content: space-between;
     gap: 10px;
     overflow-x: auto;
+    overflow-y: hidden;
     width: 100%;
     white-space: nowrap;
     scroll-behavior: smooth;  /* Smooth scrolling if needed */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
+}
+
+.demo-container img {
+    transform: translateY(20px);
 }
 
 .border-rounded {
@@ -532,7 +547,7 @@ html {
 @media (min-width: 992px) {
 
     .main-container {
-        margin-top: 13rem;
+        margin-top: 10rem;
     }
 
     .interactive-text {
@@ -580,11 +595,15 @@ html {
         display: flex;
     }
 
-    .greeting-container {
-
-        /* Change to inline-flex */
+    .demo-container { 
+        transform: translateY(20px);   /* Firefox */
+        transition: all 0.5s ease-in-out;
     }
 
+    .project-box:hover .demo-container {
+        transform: translateY(0px);
+    }
+    
     .greeting img {
         height: 6rem;
         /* Ensure the image has a consistent height */
