@@ -60,6 +60,8 @@
             </a>
         </div>
     </nav>
+    <div class="about-container hidden">
+    </div>
     <div class="main-container">
         <div id="landing" class="landing-text ibm-plex-mono-bold-italic">
             <div id="greeting" class="greeting">
@@ -369,81 +371,73 @@
 
         </div>
 
-        <div class="projects">
-
-        </div>
-
-        <div class="project-container">
-            <div class="project-box">
-                <div class="project-radial"></div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <div class="app-title">
-                            <img class="app-icon" src="/assets//see-assets/See-App-Icon.png" alt="see-app-icon">
-                            <div class="app-name poppins-extrabold text-white">
-                                <span class="app">See</span>
-                                <span class="app-kind">Anime Streaming App</span>
-                            </div>
-                        </div>
-
-                        <div x-data="{ open: false }"> <!-- Alpine state -->
-
-                            <!-- Button to open modal -->
-                            <button @click="open = true" class="demo-button">
-                                <span class="inter-regular text-white">Demo (gif) </span>
-                                <div class="stack-radial"></div>
-                            </button>
-                        
-                            <!-- Modal Background -->
-                            <div 
-                                x-show="open" 
-                                class="demo-modal fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center"
-                                @click.away="open = false" 
-                                x-transition
-                            >
-                                <!-- Modal Content -->
-                                <div 
-                                    class="demo-modal"
-                                     @click="open = false"
-                                >
-                                    <img src="/assets/see-assets/Demo.gif" class="border-rounded" alt="see-demo" height="550">
+        <div class="projects ">
+            <div class="project-container">
+                <div class="project-box">
+                    <div class="project-radial"></div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="app-title">
+                                <img class="app-icon" src="/assets//see-assets/See-App-Icon.png" alt="see-app-icon">
+                                <div class="app-name poppins-extrabold text-white">
+                                    <span class="app">See</span>
+                                    <span class="app-kind">Anime Streaming App</span>
                                 </div>
                             </div>
+    
+                            <div x-data="{ open: false }"> <!-- Alpine state -->
+    
+                                <!-- Button to open modal -->
+                                <button @click="open = true" class="demo-button">
+                                    <span class="inter-regular text-white">Demo (gif) </span>
+                                    <div class="stack-radial"></div>
+                                </button>
+                            
+                                <!-- Modal Background -->
+                                <div 
+                                    x-show="open" 
+                                    class="demo-modal fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center"
+                                    @click.away="open = false" 
+                                    x-transition
+                                >
+                                    <!-- Modal Content -->
+                                    <div 
+                                        class="demo-modal"
+                                         @click="open = false"
+                                    >
+                                        <img src="/assets/see-assets/Demo.gif" class="border-rounded" alt="see-demo" height="550">
+                                    </div>
+                                </div>
+                            </div>
+                            
+    
                         </div>
                         
-
-                    </div>
-                    
-                    <div class="project-tech">
-                        <button class="stack-button">
-                            <span class="inter-bold text-white">REACT NATIVE</span>
-                            <div class="stack-radial"></div>
-                        </button>
-                        <button class="stack-button">
-                            <span class="inter-bold text-white">EXPO</span>
-                            <div class="stack-radial"></div>
-                        </button>
-                        <button class="stack-button">
-                            <span class="inter-bold text-white">JAVASCRIPT</span>
-                            <div class="stack-radial"></div>
-                        </button>
-                        <button class="stack-button">
-                            <span class="inter-bold text-white">TYPESCRIPT</span>
-                            <div class="stack-radial"></div>
-                        </button>
-                        <button class="stack-button">
-                            <span class="inter-bold text-white">EXPRESS</span>
-                            <div class="stack-radial"></div>
-                        </button>
-                    </div>
-                    <div class="demo-container">
-                        <img class="border-rounded" height="500" src="/assets/see-assets/1.jpg" alt="1">
-                        <img class="border-rounded" height="500" src="/assets/see-assets/2.jpg" alt="2">
-                        <img class="border-rounded" height="500" src="/assets/see-assets/3.jpg" alt="3">
+                        <div class="project-tech">
+                            <div class="tag">
+                                <span class="inter-bold text-white">REACT NATIVE</span>
+                            </div>
+                            <div class="tag">
+                                <span class="inter-bold text-white">EXPO</span>
+                            </div>
+                            <div class="tag">
+                                <span class="inter-bold text-white">TYPESCRIPT</span>
+                            </div>
+                            <div class="tag">
+                                <span class="inter-bold text-white">EXPRESS</span>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <img class="border-rounded" height="500" src="/assets/see-assets/1.jpg" alt="1">
+                            <img class="border-rounded" height="500" src="/assets/see-assets/2.jpg" alt="2">
+                            <img class="border-rounded" height="500" src="/assets/see-assets/3.jpg" alt="3">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
     <footer class="footer">
         footer

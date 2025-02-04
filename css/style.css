@@ -56,7 +56,8 @@ html {
     align-items: center;
     width: 100%;
     height: 100%;
-    min-height: 100vh; /* Ensure it takes full viewport height */
+    min-height: 100vh;
+    /* Ensure it takes full viewport height */
     z-index: 10;
     margin-top: 12rem;
 }
@@ -180,13 +181,17 @@ html {
 }
 
 
-.nav-bar { /* If using class, or #nav-bar if using ID */
+.nav-bar {
+    /* If using class, or #nav-bar if using ID */
     display: flex;
     height: 15%;
-    position: fixed; /* Changed from sticky to fixed */
+    position: fixed;
+    /* Changed from sticky to fixed */
     top: 0;
-    left: 0; /* Add this */
-    right: 0; /* Add this */
+    left: 0;
+    /* Add this */
+    right: 0;
+    /* Add this */
     align-items: center;
     justify-content: space-between;
     z-index: 30;
@@ -195,7 +200,8 @@ html {
 }
 
 .hidden {
-    top: -60px; /* Adjust based on your header height */
+    top: -60px;
+    /* Adjust based on your header height */
 }
 
 
@@ -279,59 +285,79 @@ html {
     top: 80px;
     border-radius: 20px;
     box-shadow: 0 0px 0px 0.5px rgba(255, 255, 255, 0.568);
-    transform: scale(0); /* Initially hidden */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for both scale and opacity */
-    transform-origin: top right; /* Scale from top-right corner */
-    opacity: 0; /* Initially hidden */
-    pointer-events: none; /* Disable interaction when hidden */
+    transform: scale(0);
+    /* Initially hidden */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    /* Smooth transition for both scale and opacity */
+    transform-origin: top right;
+    /* Scale from top-right corner */
+    opacity: 0;
+    /* Initially hidden */
+    pointer-events: none;
+    /* Disable interaction when hidden */
 }
 
 .social-container.show {
-    transform: scale(1); /* Full size */
-    opacity: 1; /* Fully visible */
-    pointer-events: auto; /* Enable interaction */
+    transform: scale(1);
+    /* Full size */
+    opacity: 1;
+    /* Fully visible */
+    pointer-events: auto;
+    /* Enable interaction */
 }
 
 
 .social-button {
     width: 50px;
-    height: 50px; 
+    height: 50px;
     background: #8b8b8b60;
     backdrop-filter: blur(15px);
     display: flex;
-    position: relative; /* Ensure the button is positioned correctly */
-    overflow: hidden; /* Hide overflow in case of rotation */
-    border-radius: 50%; /* Changed to 50% for a perfect circle */
-    justify-content: center; /* Centering items inside the button */
-    align-items: center; /* Centering items inside the button */
+    position: relative;
+    /* Ensure the button is positioned correctly */
+    overflow: hidden;
+    /* Hide overflow in case of rotation */
+    border-radius: 50%;
+    /* Changed to 50% for a perfect circle */
+    justify-content: center;
+    /* Centering items inside the button */
+    align-items: center;
+    /* Centering items inside the button */
     color: white;
     box-shadow: 0 0px 0px 0.5px rgba(255, 255, 255, 0.568);
-    transition: all 0.5s ease-in; /* Smooth transition for all properties */
+    transition: all 0.5s ease-in;
+    /* Smooth transition for all properties */
 }
 
 .social-button span {
-    display: flex; /* Use flex to ensure center alignment of icon */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-top: 3px; /* Adjust margin if necessary */
+    display: flex;
+    /* Use flex to ensure center alignment of icon */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    margin-top: 3px;
+    /* Adjust margin if necessary */
 }
 
 .social-button span i {
-    transition: transform 0.3s ease; /* Smooth transition for icon scaling */
+    transition: transform 0.3s ease;
+    /* Smooth transition for icon scaling */
 }
 
 .social-button span i.scale {
-    transform: scale(0.5) rotate(180deg) translateY(6px); /* Scale down and rotate */
+    transform: scale(0.5) rotate(180deg) translateY(6px);
+    /* Scale down and rotate */
 }
 
 .social-button:active {
-    background:#b8b8b860;
+    background: #b8b8b860;
     box-shadow: 0 0px 5px 1px rgba(255, 255, 255, 0.568);
 }
 
 .logo-container {
     width: 50px;
-    height: 50px; 
+    height: 50px;
 }
 
 .social-container a {
@@ -363,8 +389,6 @@ html {
 .project-tech {
     margin-top: 10px;
     display: grid;
-    justify-content: center;
-    justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
@@ -382,9 +406,12 @@ html {
     overflow-y: hidden;
     width: 100%;
     white-space: nowrap;
-    scroll-behavior: smooth;  /* Smooth scrolling if needed */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+    scroll-behavior: smooth;
+    /* Smooth scrolling if needed */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .demo-container img {
@@ -419,6 +446,28 @@ html {
     height: 40px;
 }
 
+.tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding-inline: 20px;
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.568);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    height: 2.5rem;
+}
+
+.tag span {
+    text-align: center;
+    justify-self: center;
+    font-size: 0.6rem;
+}
+
+.tag:hover {
+    background: rgba(255, 255, 255, 0.068);
+    box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.329);
+}
 
 .demo-button {
     position: relative;
@@ -430,11 +479,12 @@ html {
     border-style: none;
     backdrop-filter: blur(50px);
     background: rgba(75, 75, 75, 0.227);
-    overflow: hidden; /* Ensures content is clipped to the border-radius */
+    overflow: hidden;
+    /* Ensures content is clipped to the border-radius */
     box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.568);
     cursor: pointer;
     transition: all 0.3s ease;
-    
+
 }
 
 .demo-button:hover {
@@ -467,7 +517,7 @@ html {
     border-radius: 20px;
     background: linear-gradient(0deg, rgba(201, 201, 201, 0.274) 2%, rgba(22, 22, 22, 0.267) 100%);
     backdrop-filter: blur(20px);
-    box-shadow: 0 -0.1px 0px 0.5px rgba(255, 255, 255, 0.568);
+    box-shadow: 0 -0.1px 50px 2px rgba(0, 0, 0, 0.548);
     /* -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%); */
     transition: all 0.3s ease;
@@ -506,6 +556,10 @@ html {
     /* Change opacity for a fading effect */
 }
 
+.hidden {
+    display: none;
+}
+
 
 
 @keyframes slide {
@@ -540,7 +594,7 @@ html {
     .stacks-container {
         grid-template-columns: repeat(4, 1fr);
     }
-    
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -578,7 +632,7 @@ html {
 
     .logo-container {
         width: 10%;
-    
+
     }
 
     .social-button {
@@ -595,15 +649,16 @@ html {
         display: flex;
     }
 
-    .demo-container { 
-        transform: translateY(20px);   /* Firefox */
+    .demo-container {
+        transform: translateY(20px);
+        /* Firefox */
         transition: all 0.5s ease-in-out;
     }
 
     .project-box:hover .demo-container {
         transform: translateY(0px);
     }
-    
+
     .greeting img {
         height: 6rem;
         /* Ensure the image has a consistent height */
@@ -678,10 +733,11 @@ html {
     .project-logo {
         height: 5%;
     }
-    
+
     .project-tech {
-        grid-template-columns: repeat(5, 1fr);
-    };
+        grid-template-columns: repeat(7, 1fr);
+    }
+
 
 
 }
