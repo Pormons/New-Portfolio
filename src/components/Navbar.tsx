@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import logo from "../assets/logo.svg";
-import { MoveUpRight, AtSign, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { AtSign, MoveUpRight, X } from "lucide-react";
+import { useState } from "react";
+import logo from "../assets/logo.svg";
 
 function Navbar() {
   const [showSocial, setShowSocial] = useState(false);
