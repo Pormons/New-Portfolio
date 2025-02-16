@@ -12,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <div className="fixed font-poppins justify-center px-10 md:px-24 items-center inset-0 top-5 grid grid-cols-3 w-full h-20">
+    <div className="fixed font-poppins justify-center px-10 md:px-24 items-center inset-0 top-2 grid grid-cols-3 w-full h-20">
       <div className="flex justify-start items-center">
         <a href="">
           <img src={logo} className="h-10" alt="logo" />
@@ -89,7 +89,8 @@ function Navbar() {
         } scale-0 md:scale-100 origin-top-right right-16 top-15 rounded-lg p-5 md:backdrop-blur-xs md:static bg-[#adadad49] [box-shadow:0_0px_1px_1px_rgba(255,255,255,0.5)] md:shadow-none md:bg-transparent md:flex-row md:justify-end flex-col text-white gap-2`}
       >
         <a
-          href=""
+          href="https://www.linkedin.com/in/fermin-flauta/"
+          target="_blank" rel="noopener noreferrer"
           className="flex duration-300  ease-in [box-shadow:0_0px_1px_1px_rgba(255,255,255,0)] hover:[box-shadow:0_0px_1px_1px_rgba(255,255,255,0.5)] p-2 px-5 transition-all  hover:bg-zinc-500/20 rounded-full"
         >
           <span className="poppins-regular">LinkedIn</span>
