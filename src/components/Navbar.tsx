@@ -12,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <div className="fixed font-poppins justify-center px-10 md:px-24 items-center inset-0 top-2 grid grid-cols-3 w-full h-20">
+    <div className="fixed font-poppins text-sm justify-center px-10 md:px-24 items-center inset-0 top-2 grid grid-cols-3 w-full h-20">
       <div className="flex justify-start items-center">
         <a href="">
           <img src={logo} className="h-10" alt="logo" />
